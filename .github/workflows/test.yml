@@ -4,9 +4,9 @@ jobs:
   build-app:
     runs-on: ubuntu-latest
     env: 
-      VERCEL_PROJECT_ID: ${{ secrets.V_PROJ_ID }}
-      VERCEL_ORG_ID: ${{ secrets.V_ORG_ID }}
-      VERCEL_TOKEN: ${{ secrets.V_TOKEN}}
+      V_PROJ_ID: ${{ secrets.V_PROJ_ID }}
+      V_ORG_ID: ${{ secrets.V_ORG_ID }}
+      V_TOKEN: ${{ secrets.V_TOKEN}}
     steps: 
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
