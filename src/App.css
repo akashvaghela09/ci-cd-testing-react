@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.App {
+  text-align: center;
+  background-color: #2f3542;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+p {
+  color: #ced6e0;
+  font-size: 50px;
+  font-weight: 500;
+}
