@@ -1,13 +1,7 @@
 name: first-github-action
 on: push
-jobs: 
-  - print-hello-world:
-    runs-on: ubuntu-latest
-    steps: 
-      - run: echo "Hello Wolrd 1...."
-      - run: echo "Step number 2..."
-  - print-hello-world:
-    runs-on: ubuntu-latest
-    steps: 
-      - run: echo "Hello Wolrd 1...."
-      - run: echo "Step number 2..."
+jobs: - print-hello-world:
+        runs-on: ubuntu-latest
+        steps: 
+        - run: echo "Hello Wolrd 1...."
+        - run: echo "Step number 2..."
