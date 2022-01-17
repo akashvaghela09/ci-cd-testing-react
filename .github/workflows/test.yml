@@ -1,8 +1,8 @@
 name: first-github-action
-on: [push]
+on: push
 jobs: 
   print-hello-world: 
-    runs-on: windows
+    runs-on: ubuntu-latest
     steps: 
       - run: echo "Hello Wolrd ...."
       - run: echo "Step number 2..."
