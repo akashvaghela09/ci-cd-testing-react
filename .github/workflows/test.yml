@@ -23,3 +23,9 @@ jobs:
     - name: deploy the project
       run: npm run deploy 
     - run: echo "Deployment Complete"
+  test-app: 
+    needs: build-app
+    runs-on: ubuntu-latest
+    name: testing the app
+    steps: 
+      - run: echo "Testing is done ....."
