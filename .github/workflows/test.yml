@@ -4,5 +4,5 @@ jobs:
   print-hello-world: 
     runs-on: ubuntu-latest
     steps: 
-      -run: echo "Hello Wolrd ...."
-      -run: echo "Step number 2..."
+      - run: echo "Hello Wolrd ...."
+      - run: echo "Step number 2..."
