@@ -1,8 +1,10 @@
 name: first-github-action
 on: push
 jobs: 
-  build-app:
+  buildApp:
     runs-on: ubuntu-latest
+    outputs: 
+      text: ${{ steps.finished.outputs.text }}
     env: 
       V_PROJ_ID: ${{ secrets.V_PROJ_ID }}
       V_ORG_ID: ${{ secrets.V_ORG_ID }}
@@ -21,11 +23,17 @@ jobs:
         touch project.json
         echo "{\"projectId\": \"$V_PROJ_ID\", \"orgId\": \"$V_ORG_ID\"}" > project.json
     - name: deploy the project
-      run: npm run deploy 
-    - run: echo "Deployment Complete"
+      - run: npm run deploy 
+      - run: echo "Deployment Complete"
+    - name: final step
+      id: finished 
+      run: echo "::set-output name=text::testing-output-string"
   test-app: 
-    needs: build-app
+    needs: buildApp
     runs-on: ubuntu-latest
+    env: 
+      ENV_STRING: ${{ needs.buildApp.outputs.text}}
     name: testing the app
     steps: 
+      - run: echo $ENV_STRING
       - run: echo "Testing is done ....."
